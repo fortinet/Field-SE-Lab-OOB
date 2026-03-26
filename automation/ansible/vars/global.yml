@@ -5,7 +5,7 @@
   fortiflex_SN: "<insert your fortiflex SN>"
   
   fortinet_user: admin
-  fortinet_password: password
+  fortinet_password: Leadership-1
   fortinet_timezone: US/Central
 
   proxmox_api_user: IaC@pam

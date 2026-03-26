@@ -1,6 +1,6 @@
 config system admin
     edit admin
-    set password password
+    set password Leadership-1
 end
 diag sys forticonverter set-prompt-visibility hidden
 config system interface
