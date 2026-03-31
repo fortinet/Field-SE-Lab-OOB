@@ -1,6 +1,7 @@
 ---
   - name: Create SDN and VNETs   
     hosts: {{ pve_node }} 
+    gather_facts: false
     tasks:
       - name: Run script to create SDN and VNETs 
         ansible.builtin.script: ./Create_VNETs.sh 

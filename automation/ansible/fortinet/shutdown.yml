@@ -2,6 +2,7 @@
 
   - name: Shutdown VM 
     hosts: "{{ hosts_group }}" 
+    gather_facts: false
     connection: httpapi 
     collections:
       - fortinet.fortios

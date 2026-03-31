@@ -1,6 +1,7 @@
 ---
   - name: Update Wallpaper on Ubuntu  
     hosts: "{{ group_name }}" 
+    gather_facts: false
     tasks:
       - name: Run script to update Wallpaper on Ubuntu 
         ansible.builtin.script: ./wallpaper-update-script.sh {{ inventory_hostname }} 

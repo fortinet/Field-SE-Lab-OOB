@@ -2,6 +2,7 @@
 
   - name: Configure FortiGates - Global and System Settings, FortiGuard, Nameserver, Central Management 
     hosts: "{{ hosts_group }}" 
+    gather_facts: false
     connection: httpapi 
     collections:
       - fortinet.fortios

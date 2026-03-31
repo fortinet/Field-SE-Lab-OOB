@@ -1,6 +1,7 @@
 ---
   - name: Start or Stop VM  
     hosts: "{{ pve_node }}" 
+    gather_facts: false
     vars_files:
       - ../vars/global.yml
       - "{{ host_vars_file }}"

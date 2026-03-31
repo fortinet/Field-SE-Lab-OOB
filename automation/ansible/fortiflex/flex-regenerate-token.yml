@@ -4,7 +4,7 @@
   - name: Regenerate token
 
     hosts: localhost
-
+    gather_facts: false
     vars_files:
       - ../vars/global.yml
       - "{{ serial_number_vars_file }}"

@@ -1,6 +1,7 @@
 ---
   - name: Configure TCGUI 
     hosts: "{{ group_name }}" 
+    gather_facts: false
     vars_files:
       - ../vars/global.yml
     become: yes

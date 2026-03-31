@@ -154,6 +154,7 @@ echo #####Ubuntu Base Install##########
 rm OOB_Install.sh
 sudo rm README.md
 sudo rm update_subnet.sh
+sudo rm .gitignore
 sudo rm -r .git
 
 echo #################################
