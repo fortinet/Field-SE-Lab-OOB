@@ -13,7 +13,7 @@
         password: "{{ fortiflex_password }}"
         accountId: "{{ fortiflex_accountId }}" 
         programSerialNumber: "{{ fortiflex_SN }}" 
-        status: "ACTIVE"    # "ACTIVE", "STOPPED", "PENDDING", "EXPIRED"
+        # status: "ACTIVE"    # "ACTIVE", "STOPPED", "PENDDING", "EXPIRED"
 
         # Optional filter options
         # description: "you can use description to distinguish entitlements"
@@ -27,8 +27,20 @@
         dest: /home/fortinet/automation/ansible/fortiflex/entitlements.txt
       delegate_to: localhost
 
-    - name: Execute local Python script
+    - name: Display Data Gathered from Support Portal (via Python script)
       ansible.builtin.script: read-entitlements.py {{ file_name }}
+      args:
+        executable: python3 # Specify the Python interpreter if needed
+      vars:
+        file_name: "entitlements.txt"
+      register: result
+
+    - name: Display response
+      ansible.builtin.debug:
+        var: result.stdout_lines
+
+    - name: Place Tokens into Associated Files (via Python script)
+      ansible.builtin.script: create-token-files.py {{ file_name }}
       args:
         executable: python3 # Specify the Python interpreter if needed
       vars:

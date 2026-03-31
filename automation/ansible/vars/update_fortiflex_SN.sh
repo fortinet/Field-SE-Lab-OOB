@@ -43,4 +43,4 @@ echo "$variable1  : $1";
 ### Enable verbose execution of script ###
 set -v
 
-sed -i "/fortiflex_SN/c\  fortiflex_SN: '$1'" global.yml 
+sed -i "/fortiflex_SN/c\  fortiflex_SN: \"$1\"" global.yml 

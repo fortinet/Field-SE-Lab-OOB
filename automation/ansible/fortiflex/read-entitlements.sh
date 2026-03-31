@@ -10,10 +10,9 @@ Help()
   echo "-----"
   echo "Usage"
   echo "-----"
-  echo "$yml_file.sh [host vars file name] [pve node] [group] [image name]"
+  echo "$yml_file.sh [filename to read]"
   echo " " 
-  echo "Example 1:  $yml_file.sh post" 
-  echo "Example 2:  $yml_file.sh pre" 
+  echo "Example 1:  $yml_file.sh entitlements.txt" 
   echo " "
 } 
 
@@ -40,7 +39,7 @@ fi
 ##########    End    ############
 ##### Identify Arguent Flags ####
 
-#echo "pre or post   : $1";
+#echo "filename   : $1";
 
 ### Enable verbose execution of script ###
 #set -v

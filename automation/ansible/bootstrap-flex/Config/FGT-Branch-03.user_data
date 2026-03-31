@@ -1,6 +1,9 @@
+config system password-policy
+    set status disable
+end
 config system admin
     edit admin
-    set password Leadership-1
+    set password password 
 end
 diag sys forticonverter set-prompt-visibility hidden
 config system interface

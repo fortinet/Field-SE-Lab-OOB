@@ -22,5 +22,5 @@
     - name: Save entitlement info to file on control node
       copy:
         content: "{{ result.entitlements }}"
-        dest: /home/fortinet/automation/ansible/fortiflex/entitlements-pre-stopped.txt
+        dest: /home/fortinet/automation/ansible/fortiflex/entitlements-stopped.txt
       delegate_to: localhost

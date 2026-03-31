@@ -16,6 +16,9 @@
     icon: /images/fortinet.png
 #    icon: /images/Fortinet-logo.svg
 
+- greeting:
+    text: "SE Lab"
+
 - openmeteo:
     label: Menomonee Falls, WI # optional
     latitude: 43.15218 

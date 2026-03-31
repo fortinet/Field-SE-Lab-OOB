@@ -40,6 +40,8 @@ sudo ansible-galaxy collection install fortinet.fortiflexvm
 sudo ansible-galaxy collection install fortinet.fortios
 sudo ansible-galaxy collection install fortinet.fortimanager
 sudo ansible-galaxy collection install fortinet.fortianalyzer
+ansible-galaxy collection install fortinet.fortiflexvm
+ansible-galaxy collection install fortinet.fortianalyzer
 echo ##########     end     ############
 echo ######## Ansible Install ##########
 
