@@ -1,6 +1,6 @@
 #! /bin/bash
 
-variable1="Subnet"
+variable1="First 3 Octets of New Subnet"
 
 ###### Display Help ######
 Help()
@@ -12,7 +12,7 @@ Help()
   echo "-----"
   echo "$0 [$variable1]" 
   echo " " 
-  echo "Example 1:  $0  <external subnet to SE Lab>" 
+  echo "Example 1:  $0  192.168.10" 
   echo " "
 } 
 
