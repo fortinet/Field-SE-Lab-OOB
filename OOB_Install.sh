@@ -116,7 +116,10 @@ echo ##########    end     ############
 
 echo ########### start ################
 echo ## container/config/script dirs ##
-sudo mv automation ../
+
+mkdir ../automation
+cp -rf ./automation/* ../automation/
+rm -rf ./automation/
 sudo chmod -R 775 ../automation
 sudo find ../automation/ -type f -iname "*.txt"       -exec chmod 664 {} \;
 sudo find ../automation/ -type f -iname "*.cfg"       -exec chmod 664 {} \;
@@ -125,7 +128,9 @@ sudo find ../automation/ -type f -iname "*.conf"      -exec chmod 664 {} \;
 sudo find ../automation/ -type f -iname "*.user_data" -exec chmod 664 {} \;
 sudo find ../automation/ -type f -iname "*.lic"       -exec chmod 664 {} \;
 
-sudo mv c_data ../
+mkdir ../c_data
+cp -rf ./c_data/* ../c_data/
+rm -rf ./c_data/
 echo ## container/config/script dirs ##
 echo ##########     end     ############
 
