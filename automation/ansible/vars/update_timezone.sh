@@ -59,4 +59,4 @@ echo "$variable1  : $1";
 ### Enable verbose execution of script ###
 set -v
 
-sed -i "/fortinet_timezone:/c\  fortinet_timezone: $1" global.yml
+sed -i "/fortinet_timezone:/c\  fortinet_timezone: \"$1\"" global.yml
