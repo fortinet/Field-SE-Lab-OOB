@@ -1,0 +1,19 @@
+If using multiple labs (i.e. Lab with 7.6.x and another with 8.0.0)
+the recommendation is to have seperate configurations in FortiFlex for each lab.
+
+When deploying VM's and preparing to install FortiFlex Tokens into FGT's
+don't do the following step in the "how-to" build:
+	./flex-entitlements.sh
+
+instead run the following  3 times, once for each respective VM type configId's
+	./flex-entitlements-configId.sh [configId for FGT]
+	./flex-entitlements-configId.sh [configId for FAZ]
+	./flex-entitlements-configId.sh [configId for FMG]
+
+Find the configID's by running the following:
+
+	./flex-configs.list.sh
+
+        ./read-configs.sh configs.txt 
+
+

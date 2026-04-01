@@ -1,6 +1,7 @@
 #! /bin/bash
 
-yml_file="read-entitlements"
+yml_file="$(echo "$0" | sed 's/\(.*\)\..*/\1/').yml"
+variable1="none"
 
 ###### Display Help ######
 Help()
@@ -10,9 +11,10 @@ Help()
   echo "-----"
   echo "Usage"
   echo "-----"
-  echo "$yml_file.sh [filename to read]"
+  echo "$0 [$variable1]" 
   echo " " 
-  echo "Example 1:  $yml_file.sh entitlements.txt" 
+  echo "Example 1:  $0   
+  echo "Example 2:  $0  
   echo " "
 } 
 
@@ -30,18 +32,19 @@ do
 	exit;; 
   esac
 done
-if (($# != 1))
+if (($# != 0))
 then
-   echo "Number of arguments should be 1"
+   echo "Number of arguments should be 0"
    Help
    exit
 fi
 ##########    End    ############
 ##### Identify Arguent Flags ####
-
-#echo "filename   : $1";
+echo "$variable1  : $1";
 
 ### Enable verbose execution of script ###
-#set -v
+set -v
 
-python3 $yml_file.py $1 
+echo "$yml_file.yml"
+
+ansible-playbook $yml_file 

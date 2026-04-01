@@ -11,9 +11,9 @@
       fortinet.fortiflexvm.fortiflexvm_entitlements_list_info:
         username: "{{ fortiflex_username }}"
         password: "{{ fortiflex_password }}"
-        accountId: "{{ fortiflex_accountId }}" 
-        programSerialNumber: "{{ fortiflex_SN }}" 
-        # configId: 41105
+        # accountId: "{{ fortiflex_accountId }}" 
+        # programSerialNumber: "{{ fortiflex_SN }}" 
+        configId: "{{ fortiflex_configId }}" 
         # status: "ACTIVE"    # "ACTIVE", "STOPPED", "PENDDING", "EXPIRED"
 
         # Optional filter options

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-yml_file="read-entitlements"
+yml_file="read-configs"
 
 ###### Display Help ######
 Help()
@@ -12,7 +12,7 @@ Help()
   echo "-----"
   echo "$yml_file.sh [filename to read]"
   echo " " 
-  echo "Example 1:  $yml_file.sh entitlements.txt" 
+  echo "Example 1:  $yml_file.sh configs.txt" 
   echo " "
 } 
 

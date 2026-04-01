@@ -13,8 +13,8 @@ Help()
   echo "-----"
   echo "$0 [$variable1]" 
   echo " " 
-  echo "Example 1:  $0   pre   <= Prepaid  Entitlement"
-  echo "Example 2:  $0   post  <= Postpaid Entitlement"
+  echo "Example 1:  $0   
+  echo "Example 2:  $0  
   echo " "
 } 
 
@@ -34,7 +34,7 @@ do
 done
 if (($# != 0))
 then
-   echo "Number of arguments should be 1"
+   echo "Number of arguments should be 0"
    Help
    exit
 fi
@@ -46,8 +46,5 @@ echo "$variable1  : $1";
 set -v
 
 echo "$yml_file.yml"
-#ansible-playbook flex-entitlements.yml
 
-# ansible-playbook $yml_file -i ../inventory/pve.yml --extra-vars "host_vars_file=$1 pve_node=$2 group_name=$3 image_name=$4"
-#ansible-playbook $yml_file --extra-vars "entitlement_type=$1"
 ansible-playbook $yml_file 

@@ -20,9 +20,7 @@ except ValueError as e:
     print(f"Error: Invalid dictionary format in '{file_path}': {e}")
 
 for dictionary in my_dict:
-    print(f"configId:      {dictionary["configId"]}")
-    print(f"description:   {dictionary["description"]}")
-    print(f"LICENSE-TOKEN: {dictionary["token"]}")
-    print(f"Serial Number: {dictionary["serialNumber"]}")
-    print(f"Status: {dictionary["status"]}")
+    print(f"configId:      {dictionary["id"]}")
+    print(f"name:          {dictionary["name"]}")
+    print(f"Status:        {dictionary["status"]}")
     print(" ")

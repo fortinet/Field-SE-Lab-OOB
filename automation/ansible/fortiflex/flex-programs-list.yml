@@ -1,0 +1,20 @@
+---
+  - name: Get list of FortiFlex groups 
+
+    hosts: localhost
+    gather_facts: false
+    vars_files:
+      - ../vars/global.yml
+#      - "{{ serial_number_vars_file }}"
+    
+    tasks:
+      - name: Get groups list
+        fortinet.fortiflexvm.fortiflexvm_programs_list_info:
+          username: "{{ fortiflex_username }}"
+          password: "{{ fortiflex_password }}"
+          #accountId: "{{ fortiflex_accountId }}"  # Optional
+        register: result
+
+      - name: Display response
+        ansible.builtin.debug:
+          var: result.programs

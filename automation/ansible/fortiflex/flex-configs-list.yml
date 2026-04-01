@@ -1,0 +1,35 @@
+---
+  - name: Get list of FortiFlex Configurations for a Program 
+
+    hosts: localhost
+    gather_facts: false
+    vars_files:
+      - ../vars/global.yml
+    
+    tasks:
+      - name: Get configs list
+        fortinet.fortiflexvm.fortiflexvm_configs_list_info:
+          username: "{{ fortiflex_username }}"
+          password: "{{ fortiflex_password }}"
+          #accountId: "{{ fortiflex_accountId }}"  # Optional
+          programSerialNumber: "{{ fortiflex_SN }}"
+        register: result
+
+      - name: Save configs info to file on control node
+        copy:
+          content: "{{ result.configs }}"
+          dest: /home/fortinet/automation/ansible/fortiflex/configs.txt
+        delegate_to: localhost
+
+      - name: Display Data Gathered from Support Portal (via Python script)
+        ansible.builtin.script: read-configs.py {{ file_name }}
+        args:
+          executable: python3 # Specify the Python interpreter if needed
+        vars:
+          file_name: "configs.txt"
+        register: result
+
+      - name: Display response
+        ansible.builtin.debug:
+          var: result.stdout_lines
+
