@@ -15,8 +15,8 @@
       ansible_network_os: fortinet.fortios.fortios
       ansible_facts_modules: setup
       # Use the initial login credentials from the inventory
-      ansible_user: "admin"
-      ansible_password: "password"
+      ansible_user: "{{ fortinet_user }}"
+      ansible_password: "{{ fortinet_password }}"
 
     tasks:
 

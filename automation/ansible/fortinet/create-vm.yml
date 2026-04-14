@@ -12,37 +12,37 @@
         ansible.builtin.include_tasks:
           file: create-vm-conf.yml
 
-      - name: Import FortiOS qcow2 to SCSI0  when ( Storage == local-lvm )
+      - name: Import FortiOS qcow2 to SCSI0  when ( Storage == local-lvm or local-zfs )
         ansible.builtin.include_tasks:
           file: storage_local-lvm_import-qcow2.yml
         when: 
-          - proxmox_storage_name == 'local-lvm'
+          - proxmox_storage_name == 'local-lvm' or proxmox_storage_name == 'local-zfs'
 
       - name: Import FortiOS qcow2 to SCSI0  when ( Storage == nas )
         ansible.builtin.include_tasks:
           file: storage_nas_import-qcow2.yml
         when: 
-          - proxmox_storage_name != 'local-lvm'
+          - proxmox_storage_name != 'local-lvm' or proxmox_storage_name != 'local-zfs'
 
-      - name: Create Log disk as SCSI1       when ( storage == local-lvm ) 
+      - name: Create Log disk as SCSI1       when ( Storage == local-lvm or local-zfs ) 
         ansible.builtin.include_tasks:
           file: storage_local-lvm_create-disk.yml
         when: 
-          - proxmox_storage_name == 'local-lvm'
+          - proxmox_storage_name == 'local-lvm' or proxmox_storage_name == 'local-zfs'
 
       - name: Create Log disk as SCSI1       when ( storage == nas ) 
         ansible.builtin.include_tasks:
           file: storage_nas_create-disk.yml
         when: 
-          - proxmox_storage_name != 'local-lvm'
+          - proxmox_storage_name != 'local-lvm' or proxmox_storage_name != 'local-zfs'
 
-      - name: Mount Bootstrap ISO when       when ( Storage == local-lvm  )
+      - name: Mount Bootstrap ISO when       when ( Storage == local-lvm or local-zfs )
         ansible.builtin.include_tasks:
           file: storage_local-lvm_mount-iso.yml
         when: 
           - group_name != 'fmg'
           - group_name != 'faz'
-          - proxmox_storage_name == 'local-lvm'
+          - proxmox_storage_name == 'local-lvm' or proxmox_storage_name == 'local-zfs'
 
       - name: Mount Bootstrap ISO            when (  Storage == nas )
         ansible.builtin.include_tasks:
@@ -50,7 +50,7 @@
         when: 
           - group_name != 'fmg'
           - group_name != 'faz'
-          - proxmox_storage_name != 'local-lvm'
+          - proxmox_storage_name != 'local-lvm' or proxmox_storage_name != 'local-zfs'
 
       - name: Configure NICx to VNETs 
         ansible.builtin.include_tasks:

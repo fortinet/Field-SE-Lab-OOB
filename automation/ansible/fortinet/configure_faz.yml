@@ -15,8 +15,7 @@
       ansible_httpapi_port: 443 
       # Use the initial login credentials from the inventory
       ansible_user: "{{ fortinet_user }}"
-      ansible_password: Fort1net!
-#      ansible_password: "{{ fortinet_password }}"
+      ansible_password: "{{ fortinet_password }}"
       ansible_network_os: fortinet.fortianalyzer.fortianalyzer
 
     tasks:

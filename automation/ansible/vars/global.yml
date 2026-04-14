@@ -14,7 +14,13 @@
   proxmox_api_host: pve01          ## == to PVE server name
   proxmox_clone_type: full
   proxmox_storage: /var/lib/vz     ## <= not using NAS ## with NAS => /mnt/pve/NFS-VMS
-  proxmox_storage_name: local-lvm  ## <= not using NAS ## with NAS => NFS-VMS 
+  ########################################################### 
+  ## Storage Name                                          ##
+  ## this is "unique" based on how you setup proxmox       ##
+  ## Not using NAS it can be either local-lvm or local-zfs ##
+  ## Using NAS it will be the NFS name:  example: NFS-PVE  ##
+  ###########################################################
+  proxmox_storage_name: local-lvm  ## <= lvm not using NAS 
   proxmox_format: qcow2 
   proxmox_ubuntu_template_name: Ubuntu-Template ## == name of Ubuntu VM Template
   proxmox_ubuntu_template_vmid: 491 ## == to vmid of Ubuntu VM Template
