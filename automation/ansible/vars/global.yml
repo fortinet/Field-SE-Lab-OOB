@@ -20,7 +20,7 @@
   ## Not using NAS it can be either local-lvm or local-zfs ##
   ## Using NAS it will be the NFS name:  example: NFS-PVE  ##
   ###########################################################
-  proxmox_storage_name: local-lvm  ## <= lvm not using NAS 
+  proxmox_storage_name: local-lvm  ## see above ## <= Either local-lvm or local-zfs if not using NAS 
   proxmox_format: qcow2 
   proxmox_ubuntu_template_name: Ubuntu-Template ## == name of Ubuntu VM Template
   proxmox_ubuntu_template_vmid: 491 ## == to vmid of Ubuntu VM Template
