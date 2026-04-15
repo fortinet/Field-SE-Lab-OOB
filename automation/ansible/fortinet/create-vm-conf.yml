@@ -1,6 +1,7 @@
 ---
       - name: Create new Fortinet VM 
         community.proxmox.proxmox_kvm:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}"
           api_token_secret: "{{ proxmox_api_token_secret }}"

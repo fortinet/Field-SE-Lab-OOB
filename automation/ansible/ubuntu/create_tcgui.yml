@@ -8,6 +8,7 @@
     tasks:
       - name: Clone Ubuntu cloud-init VM 
         community.proxmox.proxmox_kvm:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -29,6 +30,7 @@
 
       - name: Update the cloned Ubuntu VM's cloud-init variables 
         community.proxmox.proxmox_kvm:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -64,6 +66,7 @@
 
       - name: Update the cloned Ubuntu VM's NIC0
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -81,6 +84,7 @@
 
       - name: Update the cloned Ubuntu VM's NIC1
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -98,6 +102,7 @@
 
       - name: Update the cloned Ubuntu VM's NIC2
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -115,6 +120,7 @@
 
       - name: Update the cloned Ubuntu VM's NIC3
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -132,6 +138,7 @@
 
       - name: Update the cloned Ubuntu VM's NIC4
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -149,6 +156,7 @@
 
       - name: Update the cloned Ubuntu VM's NIC5
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -166,6 +174,7 @@
 
       - name: Update the cloned Ubuntu VM's NIC6
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -183,6 +192,7 @@
 
       - name: Update the cloned Ubuntu VM's NIC7
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -200,6 +210,7 @@
 
       - name: Update the cloned Ubuntu VM's NIC8
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -217,6 +228,7 @@
 
       - name: Update the cloned Ubuntu VM's NIC9
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -234,6 +246,7 @@
 
       - name: Update the cloned Ubuntu VM's NIC10
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 
@@ -251,6 +264,7 @@
 
       - name: Update the cloned Ubuntu VM's NIC11
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}" 
           api_token_secret: "{{ proxmox_api_token_secret }}" 

@@ -2,6 +2,7 @@
 
       - name: Update the FortiGate VM's NIC0
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}"
           api_token_secret: "{{ proxmox_api_token_secret }}"
@@ -19,6 +20,7 @@
 
       - name: Update the FortiGate VM's NIC1
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}"
           api_token_secret: "{{ proxmox_api_token_secret }}"
@@ -36,6 +38,7 @@
 
       - name: Update the FortiGate VM's NIC2
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}"
           api_token_secret: "{{ proxmox_api_token_secret }}"
@@ -53,6 +56,7 @@
 
       - name: Update the FortiGate VM's NIC3
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}"
           api_token_secret: "{{ proxmox_api_token_secret }}"
@@ -71,6 +75,7 @@
 
       - name: Update the FortiGate VM's NIC4 (only if Hub01a or Hub01b)
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}"
           api_token_secret: "{{ proxmox_api_token_secret }}"
@@ -90,6 +95,7 @@
 
       - name: Update the FortiGate VM's NIC5 (only if Hub01a or Hub01b)
         community.proxmox.proxmox_nic:
+          validate_certs: false
           api_user: "{{ proxmox_api_user }}"
           api_token_id: "{{ proxmox_api_token_id }}"
           api_token_secret: "{{ proxmox_api_token_secret }}"
