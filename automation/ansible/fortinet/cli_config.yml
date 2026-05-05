@@ -9,7 +9,7 @@
     firewall_address_name: 'firewalladdress0'
     # =====================================================================
     script_path: './tmp/'
-    ansible_password: "{{ 'Endus3r12!' if group_name == 'fmg_faz' else 'password' }}"
+    ansible_password: "{{ fortinet_password }}"
 
   tasks:
    - name: Prepare The Shell Scrit Template.

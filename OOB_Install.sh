@@ -94,6 +94,17 @@ echo ###########   end      ############
 echo ######## resolved.conf   ##########
 
 
+echo ##########   start     ############
+echo ########## tftpd-hpa   ############
+sudo chmod 644 tftpd-hpa
+sudo chown root tftpd-hpa
+sudo chown :root tftpd-hpa
+sudo mv tftpd-hpa /etc/default
+sudo systemctl restart tftpd-hpa
+echo ###########   end      ############
+echo ########## tftpd-hpa   ############
+
+
 echo ########### start ################
 echo ####### Install Docker  ##########
 sudo apt update
