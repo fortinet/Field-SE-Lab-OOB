@@ -22,7 +22,8 @@
         ansible.builtin.include_tasks:
           file: storage_nas_import-qcow2.yml
         when: 
-          - proxmox_storage_name != 'local-lvm' or proxmox_storage_name != 'local-zfs'
+          - proxmox_storage_name != 'local-lvm'
+          - proxmox_storage_name != 'local-zfs'
 
       - name: Create Log disk as SCSI1       when ( Storage == local-lvm or local-zfs ) 
         ansible.builtin.include_tasks:
@@ -34,7 +35,8 @@
         ansible.builtin.include_tasks:
           file: storage_nas_create-disk.yml
         when: 
-          - proxmox_storage_name != 'local-lvm' or proxmox_storage_name != 'local-zfs'
+          - proxmox_storage_name != 'local-lvm'
+          - proxmox_storage_name != 'local-zfs'
 
       - name: Mount Bootstrap ISO when       when ( Storage == local-lvm or local-zfs )
         ansible.builtin.include_tasks:
