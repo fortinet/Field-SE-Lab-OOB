@@ -145,16 +145,6 @@ rm -rf ./c_data/
 echo ## container/config/script dirs ##
 echo ##########     end     ############
 
-echo ##########   start     ############
-echo #JavaScript/Package Manager Install
-cd /home/fortinet/c_data/foaas/
-sudo apt install -y nodejs npm
-sudo npm install    express
-sudo npm install
-cd /home/fortinet/Downloads/
-echo ##########     end     ############
-echo #JavaScript/Package Manager Install
-
 
 echo ###### start last check   ########
 echo ######application install#########

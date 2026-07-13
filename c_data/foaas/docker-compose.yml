@@ -1,9 +1,0 @@
-services:
-  foaas:
-    image: foaas:1 
-    container_name: foaas 
-    ports:
-      - 5000:5000
-    restart: always
-    volumes:
-      - .:/usr/src/app
