@@ -41,18 +41,16 @@
       - name: Mount Bootstrap ISO when       when ( Storage == local-lvm or local-zfs )
         ansible.builtin.include_tasks:
           file: storage_local-lvm_mount-iso.yml
-        when: 
-          - group_name != 'fmg'
-          - group_name != 'faz'
-          - proxmox_storage_name == 'local-lvm' or proxmox_storage_name == 'local-zfs'
+        when: > 
+          ( group_name != 'fmg' and  group_name != 'faz' ) and  
+          ( proxmox_storage_name == 'local-lvm' or  proxmox_storage_name == 'local-zfs' )
 
       - name: Mount Bootstrap ISO            when (  Storage == nas )
         ansible.builtin.include_tasks:
           file: storage_nas_mount-iso.yml
-        when: 
-          - group_name != 'fmg'
-          - group_name != 'faz'
-          - proxmox_storage_name != 'local-lvm' or proxmox_storage_name != 'local-zfs'
+        when: > 
+          ( group_name != 'fmg' and  group_name != 'faz' ) and  
+          ( proxmox_storage_name != 'local-lvm' and  proxmox_storage_name != 'local-zfs' )
 
       - name: Configure NICx to VNETs 
         ansible.builtin.include_tasks:
