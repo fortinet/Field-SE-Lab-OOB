@@ -28,12 +28,14 @@
         dest: /home/fortinet/automation/ansible/fortiflex/entitlements.txt
       delegate_to: localhost
 
-    - name: Display Data Gathered from Support Portal (via Python script)
-      ansible.builtin.script: read-entitlements.py {{ file_name }}
+    - name: Place Tokens into Associated Files (via Python script)
+      ansible.builtin.script: flex-entitlements-parse.py {{ file_name }} {{ config_id }} {{ lic_location }}
       args:
         executable: python3 # Specify the Python interpreter if needed
       vars:
         file_name: "entitlements.txt"
+        config_id: "41105"
+        lic_location: "/home/fortinet/automation/ansible/fortinet/license"
       register: result
 
     - name: Display response
@@ -41,11 +43,27 @@
         var: result.stdout_lines
 
     - name: Place Tokens into Associated Files (via Python script)
-      ansible.builtin.script: create-token-files.py {{ file_name }}
+      ansible.builtin.script: flex-entitlements-parse.py {{ file_name }} {{ config_id }} {{ lic_location }}
       args:
         executable: python3 # Specify the Python interpreter if needed
       vars:
         file_name: "entitlements.txt"
+        config_id: "41107"
+        lic_location: "/home/fortinet/automation/ansible/fortinet/license"
+      register: result
+
+    - name: Display response
+      ansible.builtin.debug:
+        var: result.stdout_lines
+
+    - name: Place Tokens into Associated Files (via Python script)
+      ansible.builtin.script: flex-entitlements-parse.py {{ file_name }} {{ config_id }} {{ lic_location }}
+      args:
+        executable: python3 # Specify the Python interpreter if needed
+      vars:
+        file_name: "entitlements.txt"
+        config_id: "41108"
+        lic_location: "/home/fortinet/automation/ansible/fortinet/license"
       register: result
 
     - name: Display response

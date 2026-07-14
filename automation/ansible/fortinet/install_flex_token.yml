@@ -7,6 +7,8 @@
     collections:
       - fortinet.fortios
 
+    vars_files:
+      - ../vars/global.yml
     vars:
       vdom: "root"
       ansible_httpapi_use_ssl: false 
