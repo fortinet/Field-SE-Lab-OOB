@@ -52,4 +52,6 @@ sed -i "s/172.16.3/$1/g"   c_data/homepage/config/services.yaml
 sed -i "s/172\.16\.3/$1/g" c_data/guacamole/dump.sql
 sed -i "s/172.16.3/$1/g"   automation/ansible/vars/all-hosts.yml
 sed -i "s/172.16.3/$1/g"   automation/ansible/ubuntu/TCGUI_install/tcgui.sh
+sed -i "s/172.16.3/$1/g"   automation/ansible/fortinet/configure_fmg.yml
+sed -i "s/172.16.3/$1/g"   automation/ansible/fortinet/configure_faz.yml
 
