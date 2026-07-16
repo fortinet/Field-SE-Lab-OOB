@@ -44,14 +44,15 @@ echo "$variable1  : $1";
 ### Enable verbose execution of script ###
 set -v
 
-sed -i "s/172.16.3/$1/g"   generate-dynamic-netplan.sh 
+sed -i "s/172.16.3/$1/g"   generate-dynamic-netplan.sh
 sed -i "s/172.16.3/$1/g"   c_data/coredns/conf/zones/db.fortinet.internal
 sed -i "s/172.16.3/$1/g"   c_data/coredns/conf/zones/db.home.internal
 sed -i "s/172.16.3/$1/g"   c_data/homepage/config/bookmarks.yaml
 sed -i "s/172.16.3/$1/g"   c_data/homepage/config/services.yaml
 sed -i "s/172\.16\.3/$1/g" c_data/guacamole/dump.sql
 sed -i "s/172.16.3/$1/g"   automation/ansible/vars/all-hosts.yml
+sed -i "s/172.16.3/$1/g"   automation/ansible/ubuntu/create_tcgui.yml
 sed -i "s/172.16.3/$1/g"   automation/ansible/ubuntu/TCGUI_install/tcgui.sh
+sed -i "s/172.16.3/$1/g"   automation/ansible/ubuntu/TCGUI_install/tcgui_all.sh
 sed -i "s/172.16.3/$1/g"   automation/ansible/fortinet/configure_fmg.yml
 sed -i "s/172.16.3/$1/g"   automation/ansible/fortinet/configure_faz.yml
-
