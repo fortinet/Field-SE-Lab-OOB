@@ -1,28 +1,50 @@
-import ast
+import json
+import os
 import sys
+import shutil
 
-#print(f"Number of arguments: {len(sys.argv)}")
-#print(f"Arguments list: {sys.argv}")
+# Ensure the user provided all three required arguments
+if len(sys.argv) < 1:
+    print("Usage: python script.py <file_name>")
+    print("Example: python script.py entitlements.txt")
+    sys.exit(1)
 
-#if len(sys.argv) > 1:
-#    print(f"First argument: {sys.argv[1]}")
+# Assign inputs from command line arguments
+file_name = sys.argv[1]
 
-file_path = sys.argv[1] 
+files_created = 0
 
 try:
-    with open(file_path, 'r') as f:
-        dict_string = f.read()
-        my_dict = ast.literal_eval(dict_string)
-#    print("Dictionary loaded using ast.literal_eval():", my_dict)
-except FileNotFoundError:
-    print(f"Error: File '{file_path}' not found.")
-except ValueError as e:
-    print(f"Error: Invalid dictionary format in '{file_path}': {e}")
+    with open(file_name, "r") as file:
+        data = json.load(file)
+    
+    files_created = 0
 
-for dictionary in my_dict:
-    print(f"configId:      {dictionary["configId"]}")
-    print(f"description:   {dictionary["description"]}")
-    print(f"LICENSE-TOKEN: {dictionary["token"]}")
-    print(f"Serial Number: {dictionary["serialNumber"]}")
-    print(f"Status: {dictionary["status"]}")
-    print(" ")
+    for item in data:
+        # Clean up the description string for safe filenames
+        description = item.get("description", "unknown_device").replace("/", "_").replace(" ", "_")
+        token = item.get("token", "NO_TOKEN_FOUND")
+        configId = item.get("configId", "NO_CONFIG_ID_FOUND")
+        tokenStatus = item.get("tokenStatus", "NO_TOKEN_STATUS_FOUND")
+        status = item.get("status", "NO_STATUS_FOUND")
+        serialNumber = item.get("serialNumber", "NO_SERIAL_NUMBER_FOUND")
+            
+        print(f"configId:     {configId}")
+        print(f"description:  {description}")
+        print(f"serialNumber: {serialNumber}")
+        print(f"status:       {status}")
+        print(f"token:        {token}")
+        print(f"tokenStatus:  {tokenStatus}")
+        print(f" ")
+            
+        files_created += 1
+
+    print(f"\nDone! {files_created} tokens")
+
+except FileNotFoundError:
+    print(f"Error: The source file '{file_name}' was not found.")
+    sys.exit(1)
+except json.JSONDecodeError:
+    print("Error: The source file content is not valid JSON.")
+    sys.exit(1)
+

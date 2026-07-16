@@ -19,8 +19,13 @@ except FileNotFoundError:
 except ValueError as e:
     print(f"Error: Invalid dictionary format in '{file_path}': {e}")
 
+print(f"Active Config ID's")
+print(f"------------------")
+print(f" ")
 for dictionary in my_dict:
-    print(f"configId:      {dictionary["id"]}")
-    print(f"name:          {dictionary["name"]}")
-    print(f"Status:        {dictionary["status"]}")
-    print(" ")
+    # Only print if the status is Active
+    if dictionary.get("status") == "ACTIVE":
+        print(f"configId:      {dictionary["id"]}")
+        print(f"name:          {dictionary["name"]}")
+        #print(f"Status:        {dictionary["status"]}")
+        print(" ")

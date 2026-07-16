@@ -11,10 +11,12 @@ Help()
   echo "-----"
   echo "Usage"
   echo "-----"
-  echo "$0 [$variable1]" 
+  echo "$0 [ConfigID]" 
   echo " " 
-  echo "Example 1:  $0   
-  echo "Example 2:  $0  
+  echo "Example 1:  $0  41105" 
+  echo "Example 2:  $0  64305" 
+  echo " "
+  echo "Use: ./flex-configs-list.sh  to list your ConfigIDs"
   echo " "
 } 
 
@@ -32,9 +34,9 @@ do
 	exit;; 
   esac
 done
-if (($# != 0))
+if (($# != 1))
 then
-   echo "Number of arguments should be 0"
+   echo "Number of arguments should be 1"
    Help
    exit
 fi
@@ -47,4 +49,4 @@ set -v
 
 echo "$yml_file.yml"
 
-ansible-playbook $yml_file 
+ansible-playbook $yml_file --extra-vars "config_id=$1"

@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+import shutil
 
 # Ensure the user provided all three required arguments
 if len(sys.argv) < 4:
@@ -22,6 +23,14 @@ except ValueError:
 # Create the user-specified output directory
 os.makedirs(output_dir, exist_ok=True)
 
+# Ensure the directory is completely empty
+# for item in os.listdir(output_dir):
+#    item_path = os.path.join(output_dir, item)
+#    if os.path.isfile(item_path) or os.path.islink(item_path):
+#        os.unlink(item_path) # Deletes the file or link
+#    elif os.path.isdir(item_path):
+#        shutil.rmtree(item_path) # Deletes the subdirectory and its contents
+
 try:
     with open(file_name, "r") as file:
         data = json.load(file)
@@ -37,11 +46,11 @@ try:
             # Handle duplicate descriptions safely within the custom folder
             base_filename = os.path.join(output_dir, f"{description}.lic")
             final_filename = base_filename
-            counter = 1
+#            counter = 1
             
-            while os.path.exists(final_filename):
-                final_filename = os.path.join(output_dir, f"{description}_{counter}.lic")
-                counter += 1
+#            while os.path.exists(final_filename):
+#                final_filename = os.path.join(output_dir, f"{description}_{counter}.lic")
+#                counter += 1
             
             # Write token to the file
             with open(final_filename, "w") as out_file:

@@ -15,6 +15,7 @@
         programSerialNumber: "{{ fortiflex_SN }}" 
         # configId: 41105
         # status: "ACTIVE"    # "ACTIVE", "STOPPED", "PENDDING", "EXPIRED"
+        status: "ACTIVE"
 
         # Optional filter options
         # description: "you can use description to distinguish entitlements"
@@ -34,35 +35,6 @@
         executable: python3 # Specify the Python interpreter if needed
       vars:
         file_name: "entitlements.txt"
-        config_id: "41105"
-        lic_location: "/home/fortinet/automation/ansible/fortinet/license"
-      register: result
-
-    - name: Display response
-      ansible.builtin.debug:
-        var: result.stdout_lines
-
-    - name: Place Tokens into Associated Files (via Python script)
-      ansible.builtin.script: flex-entitlements-parse.py {{ file_name }} {{ config_id }} {{ lic_location }}
-      args:
-        executable: python3 # Specify the Python interpreter if needed
-      vars:
-        file_name: "entitlements.txt"
-        config_id: "41107"
-        lic_location: "/home/fortinet/automation/ansible/fortinet/license"
-      register: result
-
-    - name: Display response
-      ansible.builtin.debug:
-        var: result.stdout_lines
-
-    - name: Place Tokens into Associated Files (via Python script)
-      ansible.builtin.script: flex-entitlements-parse.py {{ file_name }} {{ config_id }} {{ lic_location }}
-      args:
-        executable: python3 # Specify the Python interpreter if needed
-      vars:
-        file_name: "entitlements.txt"
-        config_id: "41108"
         lic_location: "/home/fortinet/automation/ansible/fortinet/license"
       register: result
 
