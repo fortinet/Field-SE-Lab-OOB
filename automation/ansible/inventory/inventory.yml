@@ -48,6 +48,10 @@
           Ubuntu-11:
           Ubuntu-21:
 
+      gns3:
+        hosts:
+          Ubuntu-GNS3:
+          
       proxmox:
         hosts:
           pve01:

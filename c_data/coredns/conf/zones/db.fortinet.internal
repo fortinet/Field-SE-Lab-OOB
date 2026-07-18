@@ -38,3 +38,6 @@ fgt-branch-03 IN  A   10.100.55.57
 
 fmg           IN  A   10.100.55.12 
 faz           IN  A   10.100.55.2
+
+gns3          IN  A   172.16.3.86
+ubuntu-gns3   IN  CNAME gns3

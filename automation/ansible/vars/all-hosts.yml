@@ -215,4 +215,10 @@
       vlanconfig0: ISFW02 
       vlanconfig1: FTNTMGT 
       vmid: 421
-      
+  gns3:
+    - name: Ubuntu-GNS3 
+      ipconfig0: 'ip=172.16.3.86/24,gw=172.16.3.1'
+      ipconfig1: 'ip=10.100.55.86/24'
+      vlanconfig0: vmbr0 
+      vlanconfig1: FTNTMGT
+      vmid: 515

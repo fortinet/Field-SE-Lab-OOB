@@ -1,0 +1,14 @@
+[Unit]
+Description=GNS3 Server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/gns3server
+#WorkingDirectory=/usr/bin
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+#User=your_username
+
+[Install]
+WantedBy=multi-user.target

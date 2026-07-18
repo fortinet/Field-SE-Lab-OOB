@@ -18,6 +18,7 @@ check_exceptions() {
 declare -A exceptions
 exceptions[FortiAnalyzer]=2
 exceptions[FortiManager]=12
+exceptions[GNS3]=86
 exceptions[TCGUI]=90
 
 this_machine=`ip a | awk '
