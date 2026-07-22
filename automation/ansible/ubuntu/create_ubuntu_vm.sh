@@ -10,7 +10,7 @@ Help()
   echo "-----"
   echo "Usage"
   echo "-----"
-  echo "$yml_file.sh [host vars file name] [pve node] [group] [image name]"
+  echo "$yml_file.sh [host vars file name] [pve node] [group]"
   echo " " 
   echo "Example 1:  $yml_file.sh  ../vars/all-hosts.yml pve02 ubuntu_sdwan"
   echo "Example 2:  $yml_file.sh  ../vars/all-hosts.yml pve01 ubuntu_other"
