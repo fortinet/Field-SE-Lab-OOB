@@ -10,7 +10,7 @@ Help()
   echo "-----"
   echo "Usage"
   echo "-----"
-  echo "$yml_file.sh [vars host file] [pve node] [started | absent ]"
+  echo "$yml_file.sh [vars host file] [pve node] [group] [started | absent ]"
   echo " " 
   echo "Example 1:  $yml_file.sh  ../vars/all-hosts.yml pve03 fmg             started"
   echo "Example 2:  $yml_file.sh  ../vars/all-hosts.yml pve03 faz             started"
